@@ -1,0 +1,10 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+}
+
+button {
+    font-size: 22px;
+    font-family: 'Source Code Pro', monospace;
+    padding: 10px;
+}
