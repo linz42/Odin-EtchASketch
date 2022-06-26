@@ -1,3 +1,9 @@
+/* For testing */
+* {
+    outline: solid;
+    background-color: rgba(0, 0, 0, .1)
+}
+
 html {
     box-sizing: border-box;
     font-family: 'Source Code Pro', monospace;
@@ -7,4 +13,31 @@ button {
     font-size: 22px;
     font-family: 'Source Code Pro', monospace;
     padding: 10px;
+}
+
+/* Button style */
+#gridSize {
+    appearance: none;
+    height: 25px;
+    width: 300px;
+    margin: 10px 0;
+    background-color:rgb(0, 96, 160);
+    border-radius: 5px;
+}
+
+#gridSize::-webkit-slider-thumb {
+    height: 25px;
+    width: 10px;
+    background: rgb(0, 238, 255);
+    border-radius: 5px;
+    -webkit-appearance: none;
+}
+
+/* Grib formatting*/
+.gridcontainer {
+    height: 960px;
+    width: 960px;
+}
+.gridcontainer div {
+    background-color:rgb(0, 238, 255);
 }
