@@ -51,7 +51,3 @@ button {
     display: inline-block;
     box-sizing: border-box;
 }
-
-.gridRow:hover {
-    background-color: black;
-}

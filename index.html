@@ -18,15 +18,17 @@
     <div class="gridContainer"></div>
 
     <div class="optionsContainer">
-        <span><input type="radio" value="random">Random</span>
-        <span><input type="radio" value="choice">Choice</span>
-        <span><input type="radio" value="grayScale">GrayScale</span>
-        <br>
-        <input type="range" min="16" max="100" value="16" id="gridSize">
-        <div>Grid size: <span id="gridValue"></span></div>
+        <form>
+            <span><input name="coloroption" type="radio" value="random" checked>Random</span>
+            <span><input name="coloroption" type="radio" value="grayScale">GrayScale</span>
+            <span><input name="coloroption" type="radio" value="choice">Choice</span>
+            <br>
+            <input type="range" min="16" max="100" value="16" id="gridSize">
+        </form>
+        <div>Grid size: <span id="gridValue">16</span></div>
     </div>
 
-    <button class="reset btn">Reset</button>
+    <button class="reset btn" onclick="resetGrid()">Reset</button>
 
 </body>
 

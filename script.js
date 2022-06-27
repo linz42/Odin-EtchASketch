@@ -29,23 +29,40 @@ function createGrid() {
 document.getElementById('gridSize').addEventListener('change', () => {
     removeGrid();
     createGrid();
+    updateGridNum();
 });
 
 // Changing background color
-document.getElementById('.gridRow').addEventListener('mouseover', () => {
-    colorSquare();
-});
+const squareColor = document.getElementsByClassName('gridRow');
+const colorSelect = document.querySelector('input[name="coloroption"]:checked').value;
+function colorBG() {
+    let color = Math.floor(Math.random() * 255);
+    if (colorSelect == 'random') {
+        // Random colors code
+        squareColor.setAttribute('style', `background-color: rgb(${color}, ${color}, ${color});`)
+    } else if (colorSelect == 'grayScale') {
+        // GrayScale code
+    } else if (colorSelect == 'choice') {
+        // User choice code
+    }
+}
+squareColor.addEventListener('mouseover', colorBG);
 
-// Slider
-let slider = document.querySelector('#gridSize');
-let output = document.querySelector('#gridValue');
-output.innterHTML = slider.value;
-slider.oninput = function() {
-    output.innerHTML = this.value;
-};
+
+// Slider Output
+function updateGridNum() {
+    let slider = document.querySelector('#gridSize');
+    let output = document.querySelector('#gridValue');
+    output.innterHTML = slider.value;
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    };
+}
 
 // Reset button
-const reset = document.querySelector('.reset');
-reset.addEventListener('click', function resetpage() {
-    location.reload();
-});
+function resetGrid() {
+    const reset = document.querySelector('.reset');
+    reset.addEventListener('click', function resetpage() {
+        location.reload();
+    });
+}
