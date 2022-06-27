@@ -1,30 +1,40 @@
 // Variables
-const gridNum = document.querySelector('#gridSize').value;
-const gridNumTotal = gridNum * gridNum;
 const gridContainer = document.querySelector('.gridContainer');
-const side = (960/gridNum);
-const gridRow = document.querySelectorAll('.gridRow');
 
-// Resize squares in grid
-for (i = 0; i < gridNumTotal; i++) {
-    // adding row of divs
-        const div = document.createElement('div'); 
-        gridContainer.append(div);
-        div.classList.add('class', 'gridSquare');
-        div.style.height = `${side}px`;
-        div.style.width = `${side}px`;
-        // console.log("row: " + i + "/" + gridNum);
-};
+// Remove old grid
+function removeGrid() {
+    let e = document.querySelector('.gridContainer');
+    let first = e.firstElementChild;
+    while (first) {
+        first.remove();
+        first = e.firstElementChild;
+    };
+}
 
-// for (j = 0; j < gridNum; j++) {
-//     // adding column of divs
-//         const div = document.createElement('div'); 
-//         gridRow.append(div);
-//         div.classList.add('class', 'gridColumn');
-//         div.style.width = `${side}px`;
-//         console.log("column: " + j + "/" + gridNum);
-// };
+// Create grid
+function createGrid() {
+    const gridNum = document.querySelector('#gridSize').value;
+    const gridNumTotal = gridNum * gridNum;
+    for (i = 0; i < gridNumTotal; i++) {
+        const height = (960/gridNum);
+        const row = document.createElement('div');
+        gridContainer.appendChild(row);
+        row.classList.add('class', 'gridRow');
+        row.style.height = `${height}px`;
+        row.style.width = `${height}px`;
+    }
+}
 
+// Change grid size when range is changed
+document.getElementById('gridSize').addEventListener('change', () => {
+    removeGrid();
+    createGrid();
+});
+
+// Changing background color
+document.getElementById('.gridRow').addEventListener('mouseover', () => {
+    colorSquare();
+});
 
 // Slider
 let slider = document.querySelector('#gridSize');

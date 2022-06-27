@@ -11,15 +11,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="createGrid()">
 
     <h1>Pixel Etch-a-Sketch</h1>
 
     <div class="gridContainer"></div>
 
     <div class="optionsContainer">
-        <input type="range" min="16" max="100" value="24" id="gridSize">
-        <div>Grid size: <span id="gridValue">24</span></div>
+        <span><input type="radio" value="random">Random</span>
+        <span><input type="radio" value="choice">Choice</span>
+        <span><input type="radio" value="grayScale">GrayScale</span>
+        <br>
+        <input type="range" min="16" max="100" value="16" id="gridSize">
+        <div>Grid size: <span id="gridValue"></span></div>
     </div>
 
     <button class="reset btn">Reset</button>
