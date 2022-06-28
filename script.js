@@ -33,20 +33,21 @@ document.getElementById('gridSize').addEventListener('change', () => {
 });
 
 // Changing background color
-const squareColor = document.getElementsByClassName('gridRow');
+const squareColor = document.querySelectorAll('.gridRow');
 const colorSelect = document.querySelector('input[name="coloroption"]:checked').value;
-function colorBG() {
-    let color = Math.floor(Math.random() * 255);
-    if (colorSelect == 'random') {
-        // Random colors code
-        squareColor.setAttribute('style', `background-color: rgb(${color}, ${color}, ${color});`)
-    } else if (colorSelect == 'grayScale') {
-        // GrayScale code
-    } else if (colorSelect == 'choice') {
-        // User choice code
-    }
-}
-squareColor.addEventListener('mouseover', colorBG);
+let m;
+squareColor[m].addEventListener('mouseover', function (e) {
+        let color = Math.floor(Math.random() * 255);
+        if (colorSelect == 'random') {
+            // Random colors code
+            squareColor[m].setAttribute('style', `background-color: rgb(${color}, ${color}, ${color});`)
+        } else if (colorSelect == 'grayScale') {
+            squarecolor[m].setAttribute('style ')
+            // GrayScale code
+        } else if (colorSelect == 'choice') {
+            // User choice code
+        }
+    });
 
 
 // Slider Output
