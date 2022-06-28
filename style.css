@@ -20,6 +20,10 @@ button {
     padding: 10px;
 }
 
+h1 {
+    text-align: center;
+}
+
 /* Slider style */
 #gridSize {
     appearance: none;
@@ -38,16 +42,28 @@ button {
     -webkit-appearance: none;
 }
 
-/* Grib formatting*/
+/* Grid formatting*/
 .gridContainer {
-    height: 960px;
-    width: 960px;
+    height: 750px;
+    width: 750px;
     line-height: 0%;
     box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .gridRow {
     border: 1px solid black;
     display: inline-block;
     box-sizing: border-box;
+}
+
+/* Grid Options */
+.optionsContainer {
+    margin: 0 auto;
+    width: 350px;
+}
+
+/* Container alignment */
+.container {
+    display: flex;
 }

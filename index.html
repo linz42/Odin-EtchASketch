@@ -14,23 +14,24 @@
 <body onload="createGrid()">
 
     <h1>Pixel Etch-a-Sketch</h1>
-
+<div class="container">
     <div class="gridContainer"></div>
 
     <div class="optionsContainer">
-        <form>
-            <span><input name="coloroption" type="radio" value="random" checked>Random</span>
-            <span><input name="coloroption" type="radio" value="grayScale">GrayScale</span>
-            <span><input name="coloroption" type="radio" value="choice">Choice
-            <input type="color" id="colorpicker" value="#0000ff"></span>
-            <span><input name="coloroption" type="radio" value="eraser">Eraser</span>
-            <br>
-            <input type="range" min="16" max="100" value="16" id="gridSize">
-        </form>
-        <div>Grid size: <span id="gridValue">16</span></div>
-    </div>
+            <fieldset><legend>Options</legend>
+                <span><input name="coloroption" type="radio" value="random" checked>Random</span>
+                <!-- <span><input name="coloroption" type="radio" value="grayScale">GrayScale</span> -->
+                <span><input name="coloroption" type="radio" value="choice">Choice
+                <input type="color" id="colorpicker" value="#0000ff"></span>
+                <span><input name="coloroption" type="radio" value="eraser">Eraser</span>
+                <br>
+                <input type="range" min="16" max="100" value="16" id="gridSize">
+            <div>Grid size: <span id="gridValue">16</span></div>
 
-    <button class="reset btn" onclick="resetGrid()">Reset</button>
+        <button class="reset btn" onclick="resetGrid()">Reset</button>
+    </fieldset>
+    </div>
+</div>
 
 </body>
 

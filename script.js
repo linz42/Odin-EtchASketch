@@ -16,7 +16,7 @@ function createGrid() {
     const gridNum = document.querySelector('#gridSize').value;
     const gridNumTotal = gridNum * gridNum;
     for (i = 0; i < gridNumTotal; i++) {
-        const height = (960/gridNum);
+        const height = (750/gridNum);
         const row = document.createElement('div');
         gridContainer.appendChild(row);
         row.classList.add('class', 'gridRow');
@@ -46,8 +46,10 @@ function changeColor() {
                 let color3 = Math.floor(Math.random() * 256);
                 let randomcolor = `${color1}, ${color2}, ${color3}`;
                 singleSquare.style.backgroundColor = 'rgb(' + randomcolor + ')';
-            } else if (colorSelect == 'grayScale') {
-                // GrayScale code
+            // } else if (colorSelect == 'grayScale') {
+            //     // GrayScale code
+            //     const start = 'rgba(0, 0, 0, .1)';
+            //     singleSquare.style.backgroundColor = start;
             } else if (colorSelect == 'choice') {
                 // User choice code
                 const choice = document.getElementById('colorpicker').value;
