@@ -33,22 +33,49 @@ document.getElementById('gridSize').addEventListener('change', () => {
 });
 
 // Changing background color
-const squareColor = document.querySelectorAll('.gridRow');
-const colorSelect = document.querySelector('input[name="coloroption"]:checked').value;
-let m;
-squareColor[m].addEventListener('mouseover', function (e) {
-        let color = Math.floor(Math.random() * 255);
-        if (colorSelect == 'random') {
-            // Random colors code
-            squareColor[m].setAttribute('style', `background-color: rgb(${color}, ${color}, ${color});`)
-        } else if (colorSelect == 'grayScale') {
-            squarecolor[m].setAttribute('style ')
-            // GrayScale code
-        } else if (colorSelect == 'choice') {
-            // User choice code
-        }
-    });
+function changeColor() {
+    const squareColor = document.querySelectorAll('.gridRow');
+    for (n = 0; n < squareColor.length; n++) {
+        const colorSelect = document.querySelector('input[name="coloroption"]:checked').value;
+        let singleSquare = squareColor[n];
+        singleSquare.addEventListener('mouseenter', function (e) {
+            if (colorSelect == 'random') {
+                // Random colors code
+                let color1 = Math.floor(Math.random() * 256);
+                let color2 = Math.floor(Math.random() * 256);
+                let color3 = Math.floor(Math.random() * 256);
+                let randomcolor = `${color1}, ${color2}, ${color3}`;
+                singleSquare.style.backgroundColor = 'rgb(' + randomcolor + ')';
+            } else if (colorSelect == 'grayScale') {
+                // GrayScale code
+            } else if (colorSelect == 'choice') {
+                // User choice code
+                const choice = document.getElementById('colorpicker').value;
+                console.log(choice);
+                singleSquare.style.backgroundColor = choice;
+            } else if (colorSelect == 'eraser') {
+                // Eraser
+                singleSquare.style.backgroundColor = "white";
+            }
+        });
+    };
+}
 
+// function changeColor() {
+//     const squareColor = document.querySelector('.gridRow');
+//     squareColor.addEventListener('mouseenter', function (e) {
+//         console.log('hi');
+//         let color1 = Math.floor(Math.random() * 255);
+//         let color2 = Math.floor(Math.random() * 255);
+//         let color3 = Math.floor(Math.random() * 255);
+//         let randomcolor = `${color1}, ${color2}, ${color3}`;
+//         squareColor.style.backgroundColor = 'rgb(' + randomcolor + ')';
+
+//     })
+// }
+
+// Mouse Listener
+gridContainer.addEventListener('mouseenter', changeColor);
 
 // Slider Output
 function updateGridNum() {
